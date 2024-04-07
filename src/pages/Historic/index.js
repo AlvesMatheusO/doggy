@@ -1,10 +1,14 @@
+import Header from "../../components/Header";
 function Historic () {
     console.log("rações")
     
     return(
         <div>
+            <div className="Home-top">
+                <Header/> 
+            </div>
             <h1>
-                Historico de Rações
+                historico rações
             </h1>
         </div>
     )
