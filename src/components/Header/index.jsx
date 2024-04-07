@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import './header.css';
+import logo from './logo.png'
 
 function Header() {
     const navigate = useNavigate()
@@ -7,15 +8,25 @@ function Header() {
     const navigateToHome = () => {
         navigate("/");
     }
+    const navigateToHistoric = () => {
+        navigate("/historic")
+    }
 
     return(
-        <div>
-            <header className="header">
-                <div className="logo" onClick={navigateToHome}>Home</div>
-                {/* <Link className="logo" to="/">Home</Link>
-                <Link className="historic" to="/historic">Historic</Link> */}
+        <>
+            <header>
+                <div onClick={navigateToHome}>
+                <img className="logo" src={logo}  alt="logo"/>
+                </div>
+
+                <div>
+                    <ul id="navbar">
+                        <li><a onClick={navigateToHome}>Home</a></li>
+                        <li><a onClick={navigateToHistoric}>Histórico</a></li>
+                    </ul>
+                </div>
             </header>
-        </div>
+        </>
     )
 }
 

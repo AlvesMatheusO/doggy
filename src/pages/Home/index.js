@@ -4,7 +4,7 @@ function Home () {
     return(
         <div>
             <div className="Home-top">
-                {/* <Header/> */}
+                <Header/> 
             </div>
             <h1>
                 Bem vindo ao ZeusApp
