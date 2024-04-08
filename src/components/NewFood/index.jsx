@@ -1,10 +1,22 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import fetch from '../../axios/config.js'
 
+const InsertFood = async(e) => {
+    e.preventDefault();
 
-const InsertFood = () => {
+    const [brand, setBrand] = useState();
+    const [kg, setKg] = useState();
+    const [price, setPrice] = useState();
+
+    const post = {brand, kg, price};
+    
+    await fetch.post("/food", {
+        body: post,
+    });
+
     return (
         <div className='new-food'>
             <Form>
