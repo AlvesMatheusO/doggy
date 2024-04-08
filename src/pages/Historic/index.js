@@ -1,15 +1,17 @@
 import Header from "../../components/Header";
+import FoodFeed from "../../components/FoodFeed";
+
 function Historic () {
-    console.log("rações")
-    
+
+
     return(
         <div>
             <div className="Home-top">
                 <Header/> 
             </div>
-            <h1>
-                historico rações
-            </h1>
+            <div>
+                <FoodFeed/>
+            </div>
         </div>
     )
 }
