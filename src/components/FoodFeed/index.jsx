@@ -2,21 +2,18 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import fetch from '../../axios/config.js';
 import './index.css';
 
 
 const Historic = () => {
-
-    const url = "http://localhost:3333/foods";
 
     const [foods, setFoods] = useState([]);
 
     const getFoods = async () => {
 
         try {
-            const response = await axios.get(url);
+            const response = await fetch.get('/food');
             const data = response.data;
             setFoods(data);
             console.log("funfou")

@@ -1,4 +1,5 @@
 import Header from "../../components/Header";
+import NewFood from "../../components/NewFood"
 
 function Home () {
 
@@ -7,9 +8,10 @@ function Home () {
             <div className="Home-top">
                 <Header/> 
             </div>
-            <h1>
-                Bem vindo ao ZeusApp
-            </h1>
+
+            <div>
+                <NewFood/>
+            </div>
         </div>
     )
 }
