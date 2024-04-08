@@ -9,7 +9,7 @@ function Historic () {
             <div className="Home-top">
                 <Header/> 
             </div>
-            <div>
+            <div className="container">
                 <FoodFeed/>
             </div>
         </div>
