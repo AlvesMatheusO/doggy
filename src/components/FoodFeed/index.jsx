@@ -5,9 +5,10 @@ import fetch from '../../axios/config.js';
 import './index.css';
 
 
-const Historic = () => {
+const Historic = ({setToggleModalDelete}) => {
 
     const [foods, setFoods] = useState([]);
+    const [id, setID] = useState(null);
 
     const getFoods = async () => {
 
@@ -26,11 +27,12 @@ const Historic = () => {
     const deleteFood = async () => {
 
         try {
-            const id = foods._id;
-            const deleteR = await fetch.delete('/food/',id);
+            const deleteR = await fetch.delete(`/food/${id}`)
+                .then(('Ração deletada com sucesso'))
         } catch (error) {
-            console.log(error);
+            alert("Não foi possivel apagar sua ração. ", error)
         }
+
     }
 
     useEffect(() => {
@@ -49,7 +51,12 @@ const Historic = () => {
                             <Card.Text>R$ {food.price.$numberDecimal},00</Card.Text>
                             <Card.Text>{food.date}</Card.Text>
                             <Card.Link href="#edit">Editar</Card.Link>
-                            <Card.Link href="#delete">Deletar</Card.Link>
+                            <Card.Link href="#delete" onClick={() => {
+                                // setID(food._id)
+                                setToggleModalDelete(true);
+                                // deleteFood()
+                            }}>Deletar</Card.Link>
+
                         </Card.Body>
                     </Card>
                 ))}

@@ -1,16 +1,20 @@
 import Header from "../../components/Header";
 import FoodFeed from "../../components/FoodFeed";
+import modalDelete from "../../components/modalDelete"
+import { useState } from "react";
 
-function Historic () {
+function Historic() {
 
+    const [toggleModalDelete, setToggleModalDelete] = useState(false);
 
-    return(
+    return (
         <div>
             <div className="Home-top">
-                <Header/> 
+                <Header />
             </div>
             <div className="container">
-                <FoodFeed/>
+                <FoodFeed setToggleModalDelete={setToggleModalDelete} />
+                { }
             </div>
         </div>
     )

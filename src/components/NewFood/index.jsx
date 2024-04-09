@@ -12,11 +12,17 @@ const InsertFood = () => {
     const createFood = async (e) => {
         e.preventDefault();
 
-        await fetch.post("/food", {
-            brand: brand,
-            kg: kg,
-            price: price
-        });
+        try {
+            
+            await fetch.post("/food", {
+                brand: brand,
+                kg: kg,
+                price: price
+            }).then(alert("Ração Adicionada com sucesso"));            
+        } catch (error) {
+            alert("Erro ao adicionar a nova compra de ração. ", error);
+        }
+
     }
 
 
