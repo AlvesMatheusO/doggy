@@ -5,9 +5,9 @@ import fetch from '../../axios/config.js'
 import './home.css';
 const InsertFood = () => {
 
-    const [brand, setBrand] = useState();
-    const [kg, setKg] = useState();
-    const [price, setPrice] = useState();
+    const [brand, setBrand] = useState(null);
+    const [kg, setKg] = useState(null);
+    const [price, setPrice] = useState(null);
 
     const createFood = async (e) => {
         e.preventDefault();

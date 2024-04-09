@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -24,6 +23,16 @@ const Historic = () => {
         }
     };
 
+    const deleteFood = async () => {
+
+        try {
+            const id = foods._id;
+            const deleteR = await fetch.delete('/food/',id);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         getFoods();
     }, []);
@@ -39,8 +48,8 @@ const Historic = () => {
                             <Card.Subtitle className="mb-2 text-muted">{food.kg.$numberDecimal} Kg</Card.Subtitle>
                             <Card.Text>R$ {food.price.$numberDecimal},00</Card.Text>
                             <Card.Text>{food.date}</Card.Text>
-                            <Card.Link href="#">Editar</Card.Link>
-                            <Card.Link href="#">Deletar</Card.Link>
+                            <Card.Link href="#edit">Editar</Card.Link>
+                            <Card.Link href="#delete">Deletar</Card.Link>
                         </Card.Body>
                     </Card>
                 ))}
