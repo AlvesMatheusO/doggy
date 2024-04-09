@@ -40,7 +40,8 @@ const InsertFood = () => {
                         <Form.Control name="price" value={price} onChange={(e) => setPrice(e.target.value)} />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">Enviar</Button>
+                    <Button variant="outline-warning" type="submit">Enviar</Button>
+                    
                 </Form>
             </div>
         </div>
