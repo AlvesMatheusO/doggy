@@ -1,0 +1,16 @@
+.form-food{
+    padding: 2%;
+}
+
+.new-food{
+    padding:1%;
+    font-weight: bold;
+    position: relative;
+    left: 37%;
+    top: 28%;
+    width: max-content ;
+    background: linear-gradient(to right, rgb(245, 245, 245)  , #8781b4b4);
+    border-radius: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
