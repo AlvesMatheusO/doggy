@@ -6,11 +6,11 @@ import ModalDelete from "../../components/modalDelete"
 import './index.css';
 
 
-const Historic = ({ setToggleModalDelete, toggleModeldelete, handleClose, handleShow }) => {
+const Historic = ({ setToggleModalDelete }) => {
 
 
     const [foods, setFoods] = useState([]);
-    const [id, setID] = useState(null);
+
 
     const getFoods = async () => {
 
@@ -25,17 +25,6 @@ const Historic = ({ setToggleModalDelete, toggleModeldelete, handleClose, handle
             alert("Não foi possivel carregador suas inserções, tente recarregar a página.");
         }
     };
-
-    const deleteFood = async () => {
-
-        try {
-            const deleteR = await fetch.delete(`/food/${id}`)
-                .then(('Ração deletada com sucesso'))
-        } catch (error) {
-            alert("Não foi possivel apagar sua ração. ", error)
-        }
-
-    }
 
 
     useEffect(() => {
@@ -62,13 +51,6 @@ const Historic = ({ setToggleModalDelete, toggleModeldelete, handleClose, handle
                     </Card>
                 ))}
             </Container>
-            {toggleModeldelete ?
-                (
-                    <ModalDelete deleteFood={deleteFood}/>
-                )
-                : (
-                    null
-                )}
         </div>
     )
 }
