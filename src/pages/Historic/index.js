@@ -5,11 +5,13 @@ import { useEffect, useState } from "react";
 import fetch from '../../axios/config.js';
 import '../Home/index.js'
 
+
+
 function Historic() {
 
-
-    const [id, setID] = useState(null);
+    //const [id, setID] = useState(null);
     const [toggleModalDelete, setToggleModalDelete] = useState(false);
+    const [clicekdId, setClicekdId] = useState(null)
 
     function changeToggle() {
         setToggleModalDelete(!toggleModalDelete);
@@ -39,9 +41,12 @@ function Historic() {
 
     const deleteFood = async () => {
 
+        const id = clicekdId;
+
         try {
             const deleteR = await fetch.delete(`/food/${id}`)
-                .then(('Ração deletada com sucesso'))
+                .then( () => alert('Ração deletada com sucesso'));
+                window.location.reload()
         } catch (error) {
             alert("Não foi possivel apagar sua ração. ", error)
         }
@@ -58,12 +63,14 @@ function Historic() {
                     toggleModeldelete={toggleModalDelete} 
                     getFoods={getFoods}
                     foods={foods}
+                    setClicekdId={setClicekdId}
                     />
             </div>
 
             {toggleModalDelete ? (
                 <div className="historic-modal-delete">
-                    <ModalDelete toggleModal={changeToggle}/>
+                    <ModalDelete toggleModal={changeToggle}
+                    deleteFood={deleteFood}/>
                 </div>
             )
                 : (null)
