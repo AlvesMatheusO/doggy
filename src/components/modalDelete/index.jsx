@@ -9,20 +9,6 @@ export default function modalDelete({ deleteFood, toggleModal }) {
     };
 
     return (
-        // <div className="modalDeleteAll">
-        //     <div className='modal-overlay'>
-        //             <div className='modal'>
-        //                 <div className='modal-header'>
-        //                     <button type='button' className='modal-close-button' data-dismiss='modal' aria-label='Close' onClick={() => { setToggleModalDelete() }}>
-        //                         <span aria-hidden='true'>&times;</span>
-        //                     </button>
-        //                 </div>
-        //                 <h3>Deletar Ração</h3>
-        //                 <p>Tem certeza que deseja Deletar sua ração?</p>
-        //                 <h1>teste</h1>
-        //             </div>
-        //         </div>
-        // </div>
 
         <div className="modal-background" onClick={(e) => handleBackgroundClick(e)}>
             <div className="modal-delete-content">
@@ -40,7 +26,7 @@ export default function modalDelete({ deleteFood, toggleModal }) {
                 <div className="buttonList">
                     <button>Sair</button>
 
-                    <button className="button-default">Deletar</button>
+                    <button className="button-default" onClic>Deletar</button>
 
                 </div>
             </div>

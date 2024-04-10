@@ -1,35 +1,13 @@
 import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import fetch from '../../axios/config.js';
+
 import ModalDelete from "../../components/modalDelete"
 import './index.css';
 
 
-const Historic = ({ setToggleModalDelete }) => {
+const Historic = ({ setToggleModalDelete, foods}) => {
 
-
-    const [foods, setFoods] = useState([]);
-
-
-    const getFoods = async () => {
-
-        try {
-            const response = await fetch.get('/food');
-            const data = response.data;
-            setFoods(data);
-            console.log("funfou")
-            console.log(data)
-        } catch (error) {
-            console.log(error);
-            alert("Não foi possivel carregador suas inserções, tente recarregar a página.");
-        }
-    };
-
-
-    useEffect(() => {
-        getFoods();
-    }, []);
 
     return (
         <div>

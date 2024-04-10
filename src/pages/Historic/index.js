@@ -1,8 +1,8 @@
 import Header from "../../components/Header";
 import FoodFeed from "../../components/FoodFeed";
 import ModalDelete from "../../components/modalDelete"
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import fetch from '../../axios/config.js';
 import '../Home/index.js'
 
 function Historic() {
@@ -14,6 +14,27 @@ function Historic() {
     function changeToggle() {
         setToggleModalDelete(!toggleModalDelete);
     }
+
+    const [foods, setFoods] = useState([]);
+
+
+    const getFoods = async () => {
+
+        try {
+            const response = await fetch.get('/food');
+            const data = response.data;
+            setFoods(data);
+            console.log("funfou")
+            console.log(data)
+        } catch (error) {
+            console.log(error);
+            alert("Não foi possivel carregador suas inserções, tente recarregar a página.");
+        }
+    };
+
+    useEffect(() => {
+        getFoods();
+    }, []);
 
 
     const deleteFood = async () => {
@@ -34,7 +55,10 @@ function Historic() {
             </div>
             <div className="container">
                 <FoodFeed setToggleModalDelete={changeToggle}
-                    toggleModeldelete={toggleModalDelete} />
+                    toggleModeldelete={toggleModalDelete} 
+                    getFoods={getFoods}
+                    foods={foods}
+                    />
             </div>
 
             {toggleModalDelete ? (
