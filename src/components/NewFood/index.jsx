@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import fetch from '../../axios/config.js'
 import './home.css';
+
 const InsertFood = () => {
 
     const [brand, setBrand] = useState(null);

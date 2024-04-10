@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import fetch from '../../axios/config.js';
+import ModalDelete from "../../components/modalDelete"
 import './index.css';
 
 
-const Historic = ({setToggleModalDelete}) => {
+const Historic = ({ setToggleModalDelete, toggleModeldelete, handleClose, handleShow }) => {
+
 
     const [foods, setFoods] = useState([]);
     const [id, setID] = useState(null);
@@ -35,6 +37,7 @@ const Historic = ({setToggleModalDelete}) => {
 
     }
 
+
     useEffect(() => {
         getFoods();
     }, []);
@@ -52,15 +55,20 @@ const Historic = ({setToggleModalDelete}) => {
                             <Card.Text>{food.date}</Card.Text>
                             <Card.Link href="#edit">Editar</Card.Link>
                             <Card.Link href="#delete" onClick={() => {
-                                // setID(food._id)
-                                setToggleModalDelete(true);
-                                // deleteFood()
+                                setToggleModalDelete();
                             }}>Deletar</Card.Link>
 
                         </Card.Body>
                     </Card>
                 ))}
             </Container>
+            {toggleModeldelete ?
+                (
+                    <ModalDelete deleteFood={deleteFood}/>
+                )
+                : (
+                    null
+                )}
         </div>
     )
 }
