@@ -1,20 +1,31 @@
 import Header from "../../components/Header";
 import FoodFeed from "../../components/FoodFeed";
-import ModalDelete from "../../components/modalDelete"
+import ModalDelete from "../../components/modalDelete";
+import ModalEdit from "../../components/modalEdit";
 import { useEffect, useState } from "react";
 import fetch from '../../axios/config.js';
 import '../Home/index.js'
 
 
-
 function Historic() {
+    
+    const [brand, setBrand] = useState(null);
+    const [kg, setKg] = useState(null);
+    const [price, setPrice] = useState(null);
 
-    //const [id, setID] = useState(null);
     const [toggleModalDelete, setToggleModalDelete] = useState(false);
-    const [clicekdId, setClicekdId] = useState(null)
+    const [toggleModalEdit, setToggleModalEdit] = useState(false)
 
-    function changeToggle() {
+    const [clicekdId, setClicekdId] = useState(null)
+    const id = clicekdId;
+
+    function changeToggleDelete() {
         setToggleModalDelete(!toggleModalDelete);
+        
+    }
+
+    function changeToggleEdit() {
+        setToggleModalEdit(!toggleModalEdit);
     }
 
     const [foods, setFoods] = useState([]);
@@ -41,16 +52,28 @@ function Historic() {
 
     const deleteFood = async () => {
 
-        const id = clicekdId;
-
         try {
-            const deleteR = await fetch.delete(`/food/${id}`)
+           await fetch.delete(`/food/${id}`)
                 .then( () => alert('Ração deletada com sucesso'));
                 window.location.reload()
         } catch (error) {
             alert("Não foi possivel apagar sua ração. ", error)
         }
+    }
 
+    const editFood = async (e) => {
+        e.preventDefault();
+
+        try {
+            await fetch.put(`/food/${id}`, {
+                brand: brand,
+                kg: kg,
+                price: price
+            }).then(alert("Ração Adicionada com sucesso"));
+            window.location.reload();
+        } catch (error) {
+            alert("erro ao adicionar ração ", error);
+        }
     }
 
     return (
@@ -59,7 +82,7 @@ function Historic() {
                 <Header />
             </div>
             <div className="container">
-                <FoodFeed setToggleModalDelete={changeToggle}
+                <FoodFeed setToggleModalDelete={changeToggleDelete}
                     toggleModeldelete={toggleModalDelete} 
                     getFoods={getFoods}
                     foods={foods}
@@ -69,8 +92,17 @@ function Historic() {
 
             {toggleModalDelete ? (
                 <div className="historic-modal-delete">
-                    <ModalDelete toggleModal={changeToggle}
+                    <ModalDelete toggleModal={changeToggleDelete}
                     deleteFood={deleteFood}/>
+                </div>
+            )
+                : (null)
+            }
+
+            {toggleModalEdit ? (
+                <div className="historic-modal-edit">
+                    <ModalEdit toggleModal={changeToggleEdit}
+                    editFood={editFood} />
                 </div>
             )
                 : (null)

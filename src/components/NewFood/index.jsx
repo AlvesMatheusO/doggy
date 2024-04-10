@@ -19,7 +19,8 @@ const InsertFood = () => {
                 brand: brand,
                 kg: kg,
                 price: price
-            }).then(alert("Ração Adicionada com sucesso"));            
+            }).then(alert("Ração Adicionada com sucesso"));
+            window.location.reload()            
         } catch (error) {
             alert("Erro ao adicionar a nova compra de ração. ", error);
         }
