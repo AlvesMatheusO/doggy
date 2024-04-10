@@ -6,7 +6,7 @@ import ModalDelete from "../../components/modalDelete"
 import './index.css';
 
 
-const Historic = ({ setToggleModalDelete, foods, setClicekdId}) => {
+const Historic = ({ setToggleModalDelete,setToggleModalEdit , foods, setClicekdId}) => {
 
 
     return (
@@ -20,7 +20,11 @@ const Historic = ({ setToggleModalDelete, foods, setClicekdId}) => {
                             <Card.Subtitle className="mb-2 text-muted">{food.kg.$numberDecimal} Kg</Card.Subtitle>
                             <Card.Text>R$ {food.price.$numberDecimal}</Card.Text>
                             <Card.Text>{food.date}</Card.Text>
-                            <Card.Link href="#edit">Editar</Card.Link>
+                            <Card.Link href="#edit" onClick={()=> {
+                                setClicekdId(food._id)
+                                setToggleModalEdit();
+                            }}>Editar</Card.Link>
+
                             <Card.Link href="#delete" onClick={() => {
                                 setClicekdId(food._id)
                                 setToggleModalDelete();

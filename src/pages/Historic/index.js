@@ -83,6 +83,7 @@ function Historic() {
             </div>
             <div className="container">
                 <FoodFeed setToggleModalDelete={changeToggleDelete}
+                    setToggleModalEdit={changeToggleEdit}
                     toggleModeldelete={toggleModalDelete} 
                     getFoods={getFoods}
                     foods={foods}
