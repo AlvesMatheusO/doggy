@@ -17,7 +17,7 @@
 
 .modal-delete-content {
   z-index: 6;
-  background: white;
+  background: linear-gradient(to bottom, rgb(252, 252, 252), #200fbab4) ;
   border-radius: 3px;
   width: 28rem;
   height: 18rem;

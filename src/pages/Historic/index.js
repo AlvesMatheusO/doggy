@@ -61,18 +61,19 @@ function Historic() {
         }
     }
 
-    const editFood = async (e) => {
-        e.preventDefault();
+    const editFood = async () => {
+      
+        
 
         try {
             await fetch.put(`/food/${id}`, {
                 brand: brand,
                 kg: kg,
                 price: price
-            }).then(alert("Ração Adicionada com sucesso"));
+            }).then(alert("Ração Editada com sucesso"));
             window.location.reload();
         } catch (error) {
-            alert("erro ao adicionar ração ", error);
+            alert("erro ao editar ração ", error);
         }
     }
 
@@ -103,7 +104,13 @@ function Historic() {
             {toggleModalEdit ? (
                 <div className="historic-modal-edit">
                     <ModalEdit toggleModal={changeToggleEdit}
-                    editFood={editFood} />
+                    editFood={editFood}
+                    brand={brand}
+                    setBrand={setBrand}
+                    kg={kg}
+                    setKg={setKg}
+                    price={price}
+                    setPrice={setPrice} />
                 </div>
             )
                 : (null)

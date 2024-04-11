@@ -16,7 +16,7 @@
     background: white;
     border-radius: 3px;
     width: 28rem;
-    height: 18rem;
+    height: 29rem;
     padding: 1%;
   }
   
@@ -49,13 +49,13 @@
   .buttonList{
     position: relative;
     display: block;
-    top: 100px;
+    top: 77px;
     display: flex;
     justify-content: flex-end;
   
   }
   
   .button-default {
-    background: #d01e0e;
+    background: #b0b910;
     color: #fff;
   }

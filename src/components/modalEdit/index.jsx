@@ -3,7 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "./index.css";
 
-export default function modalEdit({ editFood, toggleModal }) {
+export default function modalEdit({ editFood, 
+    toggleModal,
+     brand, setBrand, 
+     kg, setKg, 
+     price, setPrice }) {
+
     const handleBackgroundClick = (event) => {
         // Verifica se o alvo do evento é a div de fundo modal-background
         if (event.target.classList.contains('modal-background')) {
@@ -25,30 +30,26 @@ export default function modalEdit({ editFood, toggleModal }) {
                 </div>
 
                 <form>
-                    <div className='form-food'>
-                        <div className='new-food'>
-                            <Form onSubmit={editFood}>
-                                <Form.Group className="mb-3" controlId="brand">
-                                    <Form.Label>Marca</Form.Label>
-                                    <Form.Control name="brand"/>
 
-                                </Form.Group>
 
-                                <Form.Group className="mb-3" controlId="kg">
-                                    <Form.Label>Peso</Form.Label>
-                                    <Form.Control name="kg" />
-                                </Form.Group>
+                    <Form onSubmit={editFood}>
+                        <Form.Group className="mb-3" name="brand">
+                            <Form.Label>Marca</Form.Label>
+                            <Form.Control  value={brand} name="brand" onChange={(e) => setBrand(e.target.value)} />
 
-                                <Form.Group className="mb-3" controlId="price">
-                                    <Form.Label>Preço</Form.Label>
-                                    <Form.Control name="price" />
-                                </Form.Group>
+                        </Form.Group>
 
-                                <Button variant="outline-warning" type="submit">Enviar</Button>
+                        <Form.Group className="mb-3" name="kg">
+                            <Form.Label>Peso</Form.Label>
+                            <Form.Control value={kg} name="kg" onChange={(e) => setKg(e.target.value)} />
+                        </Form.Group>
 
-                            </Form>
-                        </div>
-                    </div>
+                        <Form.Group className="mb-3" name="price">
+                            <Form.Label>Preço</Form.Label>
+                            <Form.Control value={price} name="price" onChange={(e) => setPrice(e.target.value)} />
+                        </Form.Group>
+                    </Form>
+
                 </form>
 
 
