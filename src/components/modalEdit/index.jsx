@@ -54,7 +54,9 @@ export default function modalEdit({ editFood,
 
 
                 <div className="buttonList">
-                    <button>Sair</button>
+                    <button onClick={() => {
+                        toggleModal()
+                    }}>Sair</button>
 
                     <button className="button-default" onClick={() => {
                         editFood()

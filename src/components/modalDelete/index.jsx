@@ -24,9 +24,11 @@ export default function modalDelete({ deleteFood, toggleModal }) {
                     <p>Tem certeza que deseja apagar a ração cadastrada?</p>
                 </div>
                 <div className="buttonList">
-                    <button>Sair</button>
+                    <button onClick={() => {
+                        toggleModal()
+                    }}>Sair</button>
 
-                    <button className="button-default" onClick={() => {
+                    <button className="button-default-delete" onClick={() => {
                         deleteFood()
                         toggleModal()
                     }}>Deletar</button>
