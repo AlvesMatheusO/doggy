@@ -10,6 +10,7 @@ function Home () {
             </div>
 
             <div>
+            
                 <NewFood/>
             </div>
         </div>

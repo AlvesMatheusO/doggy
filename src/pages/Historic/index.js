@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import FoodFeed from "../../components/FoodFeed";
-import ModalDelete from "../../components/modalDelete";
-import ModalEdit from "../../components/modalEdit";
+import ModalDelete from "../../components/ModalDelete";
+import ModalEdit from "../../components/ModalEdit/index.jsx";
 import { useEffect, useState } from "react";
 import fetch from '../../axios/config.js';
 import '../Home/index.js'

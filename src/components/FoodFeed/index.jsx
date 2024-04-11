@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-
-import ModalDelete from "../../components/modalDelete"
 import './index.css';
 
 
