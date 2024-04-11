@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import FoodFeed from "../../components/FoodFeed";
+import FoodHistoricCard from "../../components/FoodHistoricCard";
 import ModalDelete from "../../components/ModalDelete";
 import ModalEdit from "../../components/ModalEdit/index.jsx";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ import '../Home/index.js'
 
 
 function Historic() {
-    
+
     const [brand, setBrand] = useState(null);
     const [kg, setKg] = useState(null);
     const [price, setPrice] = useState(null);
@@ -21,7 +21,7 @@ function Historic() {
 
     function changeToggleDelete() {
         setToggleModalDelete(!toggleModalDelete);
-        
+
     }
 
     function changeToggleEdit() {
@@ -53,17 +53,17 @@ function Historic() {
     const deleteFood = async () => {
 
         try {
-           await fetch.delete(`/food/${id}`)
-                .then( () => alert('Ração deletada com sucesso'));
-                window.location.reload()
+            await fetch.delete(`/food/${id}`)
+                .then(() => alert('Ração deletada com sucesso'));
+            window.location.reload()
         } catch (error) {
             alert("Não foi possivel apagar sua ração. ", error)
         }
     }
 
     const editFood = async () => {
-      
-        
+
+
 
         try {
             await fetch.put(`/food/${id}`, {
@@ -83,19 +83,19 @@ function Historic() {
                 <Header />
             </div>
             <div className="container">
-                <FoodFeed setToggleModalDelete={changeToggleDelete}
+                <FoodHistoricCard setToggleModalDelete={changeToggleDelete}
                     setToggleModalEdit={changeToggleEdit}
-                    toggleModeldelete={toggleModalDelete} 
+                    toggleModeldelete={toggleModalDelete}
                     getFoods={getFoods}
                     foods={foods}
                     setClicekdId={setClicekdId}
-                    />
+                />
             </div>
 
             {toggleModalDelete ? (
                 <div className="historic-modal-delete">
                     <ModalDelete toggleModal={changeToggleDelete}
-                    deleteFood={deleteFood}/>
+                        deleteFood={deleteFood} />
                 </div>
             )
                 : (null)
@@ -104,13 +104,13 @@ function Historic() {
             {toggleModalEdit ? (
                 <div className="historic-modal-edit">
                     <ModalEdit toggleModal={changeToggleEdit}
-                    editFood={editFood}
-                    brand={brand}
-                    setBrand={setBrand}
-                    kg={kg}
-                    setKg={setKg}
-                    price={price}
-                    setPrice={setPrice} />
+                        editFood={editFood}
+                        brand={brand}
+                        setBrand={setBrand}
+                        kg={kg}
+                        setKg={setKg}
+                        price={price}
+                        setPrice={setPrice} />
                 </div>
             )
                 : (null)

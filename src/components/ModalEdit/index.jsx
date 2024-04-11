@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import React from 'react';
 import Form from 'react-bootstrap/Form';
 import "./index.css";
 
-export default function modalEdit({ editFood, 
+export default function modalEdit({ editFood,
     toggleModal,
-     brand, setBrand, 
-     kg, setKg, 
-     price, setPrice }) {
+    brand, setBrand,
+    kg, setKg,
+    price, setPrice }) {
 
     const handleBackgroundClick = (event) => {
         // Verifica se o alvo do evento é a div de fundo modal-background
@@ -35,7 +34,7 @@ export default function modalEdit({ editFood,
                     <Form onSubmit={editFood}>
                         <Form.Group className="mb-3" name="brand">
                             <Form.Label>Marca</Form.Label>
-                            <Form.Control  value={brand} name="brand" onChange={(e) => setBrand(e.target.value)} />
+                            <Form.Control value={brand} name="brand" onChange={(e) => setBrand(e.target.value)} />
 
                         </Form.Group>
 

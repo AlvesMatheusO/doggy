@@ -1,0 +1,12 @@
+.dashboard{
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+}
+
+.budget{
+    display: flex;
+    position: relative;
+    justify-content: center;
+	margin-top:auto;
+}

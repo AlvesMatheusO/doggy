@@ -1,17 +1,26 @@
 import Header from "../../components/Header";
-import NewFood from "../../components/NewFood"
+import NewFood from "../../components/NewFood";
+import BudgetCard from "../../components/BudgetHomeCard/budgetHomeCard";
 
-function Home () {
+import './home.css';
 
-    return(
+function Home() {
+
+    return (
         <div>
             <div className="Home-top">
-                <Header/> 
+                <Header />
             </div>
 
-            <div>
-            
-                <NewFood/>
+            <div className="dashboard">
+
+                <NewFood />
+
+                <div className="budget">
+
+                    <BudgetCard />
+                </div>
+
             </div>
         </div>
     )
