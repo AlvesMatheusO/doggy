@@ -1,6 +1,22 @@
 import './budget.css';
+import fetch from '../../axios/config.js';
+import React, { useEffect, useState } from "react";
 
-export default function budgetCard() {
+export default function BudgetCard() {
+
+    const [totalMoneySpent, setTotalMoneySpent] = useState(null);
+    const [totalKG, setTotalKG] = useState(null);
+
+
+   React.useEffect(() => {
+        fetch.get("/calculatePrice").then((response) => {
+            setTotalMoneySpent(response.data);
+        });
+
+        fetch.get("/calculateKg").then((response) => {
+            setTotalKG(response.data);
+        });
+    }, []);
 
     return (
         <div>
@@ -9,13 +25,13 @@ export default function budgetCard() {
                     <h4>Você Gastou</h4>
                 </div>
                 <div className="spent">
-                    <p>R$ 50,00</p>
+                    <p>R$ {totalMoneySpent}</p>
                 </div>
                 <div className="titleKG">
                     <h4></h4>
                 </div>
                 <div className="spentKG">
-                    <p>50Kg</p>
+                    <p>{totalKG} Kg</p>
                 </div>
                 
             </div>

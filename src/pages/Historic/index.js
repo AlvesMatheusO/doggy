@@ -37,8 +37,7 @@ function Historic() {
             const response = await fetch.get('/food');
             const data = response.data;
             setFoods(data);
-            console.log("funfou")
-            console.log(data)
+        
         } catch (error) {
             console.log(error);
             alert("Não foi possivel carregador suas inserções, tente recarregar a página.");
