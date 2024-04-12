@@ -62,8 +62,6 @@ function Historic() {
 
     const editFood = async () => {
 
-
-
         try {
             await fetch.put(`/food/${id}`, {
                 brand: brand,
