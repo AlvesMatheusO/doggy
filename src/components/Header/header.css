@@ -2,7 +2,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, rgb(0, 0, 0), #200fbab4);
+    background: linear-gradient(to right, #000000, #200fbab4);
     padding: 10px 80px;
     box-shadow: 0 5px 15px rgba(0,0,0, 0.06);
     border-bottom-left-radius: 20px; 

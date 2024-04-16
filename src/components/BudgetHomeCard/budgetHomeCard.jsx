@@ -84,7 +84,5 @@ export default function BudgetCard() {
 
             </div>
         </div>
-
-
     )
 }
