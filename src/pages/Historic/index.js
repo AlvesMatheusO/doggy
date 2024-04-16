@@ -21,7 +21,6 @@ function Historic() {
 
     function changeToggleDelete() {
         setToggleModalDelete(!toggleModalDelete);
-
     }
 
     function changeToggleEdit() {
@@ -91,7 +90,8 @@ function Historic() {
 
             {toggleModalDelete ? (
                 <div className="historic-modal-delete">
-                    <ModalDelete toggleModal={changeToggleDelete}
+                    <ModalDelete 
+                        toggleModal={changeToggleDelete}
                         deleteFood={deleteFood} />
                 </div>
             )
