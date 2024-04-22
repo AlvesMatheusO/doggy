@@ -6,7 +6,7 @@
     padding:5%;
     position: relative;
     left: 37%;
-    top: 28%;
+    top: 16%;
     width: max-content ;
     background: linear-gradient(to bottom, rgb(252, 252, 252), #200fbab4) ;
     border-radius: 5%;
@@ -16,6 +16,4 @@
 button{
     position: relative;
     border-radius: 20%;
-    
-    
 }

@@ -20,7 +20,6 @@ function Home() {
 
                     <BudgetCard />
                 </div>
-
             </div>
         </div>
     )
