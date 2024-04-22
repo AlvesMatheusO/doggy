@@ -79,7 +79,7 @@ export default function BudgetCard() {
                 <div className="spentKG">
                 
                     <button onClick={calculateTotalperMonth}>Calcular</button>
-                    <div>Total gasto no mês {monthSearch}: R${totalGasto.toFixed(2)}</div>
+                    <div>Total gasto no mês: R${totalGasto.toFixed(2)}</div>
                 </div>
 
             </div>
