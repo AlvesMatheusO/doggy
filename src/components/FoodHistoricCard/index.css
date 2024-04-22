@@ -1,6 +1,53 @@
 .foodItem {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 20px;
 }
 
+.historic-container {
+    padding: 20px;
+}
+
+.historic-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.food-card {
+    width: calc(33.33% - 20px); /* Define a largura de cada cartão */
+    margin-bottom: 20px;
+}
+
+.food-brand {
+    font-size: 1.2rem;
+}
+
+.food-kg {
+    font-weight: bold;
+}
+
+.food-price {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.food-date {
+    color: #6c757d;
+}
+
+.food-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+@media (max-width: 992px) {
+    .food-card {
+        width: calc(50% - 20px); /* Em telas menores, exibe dois itens por linha */
+    }
+}
+
+@media (max-width: 576px) {
+    .food-card {
+        width: 100%; /* Em telas ainda menores, exibe um item por linha */
+    }
+}
