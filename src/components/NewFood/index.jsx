@@ -52,6 +52,7 @@ const InsertFood = () => {
     return (
         <div className='form-food'>
             <div className='new-food'>
+                <h3>Inserir Ração</h3>
                 <Form onSubmit={createFood}>
                     <Form.Group className="mb-3" controlId="brand">
                         <Form.Label>Marca</Form.Label>
