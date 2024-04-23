@@ -7,7 +7,7 @@
     position: relative;
     left: 37%;
     top: 16%;
-    width: max-content ;
+    width:450px;
     background: linear-gradient(to bottom, rgb(252, 252, 252), #200fbab4) ;
     border-radius: 5%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -16,4 +16,4 @@
 button{
     position: relative;
     border-radius: 20%;
-}
+}   
