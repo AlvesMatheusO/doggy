@@ -15,7 +15,7 @@ const InsertFood = () => {
         e.preventDefault();
 
         try {
-            // Validar as entradas antes de criar a comida
+    
             if (parseFloat(kg) < 0) {
                 setErrorMsg('Não é permitido inserir números negativos para o peso.');
                 return;
