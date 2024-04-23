@@ -1,34 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import "./index.css";
-import api from '../../axios/config.js';
 
-export default function ModalEdit({ editFood, toggleModal, setClicekdId }) {
-    const [brand, setLocalBrand] = useState('');
-    const [kg, setLocalKg] = useState('');
-    const [price, setLocalPrice] = useState('');
-    const [errorMsg, setErrorMsg] = useState('');
-
-    useEffect(() => {
-        // Função para buscar os dados da comida com o ID correspondente
-        const fetchFoodData = async () => {
-            try {
-                const response = await api.get(`/food/${setClicekdId}`);
-                const foodData = response.data;
-                // Atualiza os estados locais com os dados obtidos
-                setLocalBrand(foodData.brand);
-                setLocalKg(foodData.kg);
-                setLocalPrice(foodData.price);
-            } catch (error) {
-                console.error('Erro ao obter os dados da comida:', error);
-            }
-        };
-
-        // Chama a função para buscar os dados da comida apenas se setClicekdId não for vazio
-        if (setClicekdId) {
-            fetchFoodData();
-        }
-    }, [setClicekdId]);
+export default function ModalEdit({ editFood, toggleModal, brand, setBrand, kg, setKg, price, setPrice }) {
+    const [errors, setErrors] = useState({}); // Estado para rastrear erros
 
     const handleBackgroundClick = (event) => {
         if (event.target.classList.contains('modal-background')) {
@@ -36,42 +11,57 @@ export default function ModalEdit({ editFood, toggleModal, setClicekdId }) {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleChangeBrand = (e) => {
+        const value = e.target.value;
+        // Verificar se o valor contém emojis
+        const containsEmoji = value.match(/[\u{1F600}-\u{1F64F}]/gu);
+        if (containsEmoji) {
+            setErrors({ ...errors, brand: 'Não é permitido usar emojis' });
+            return;
+        }
+        // Limitar o número de caracteres
+        if (value.length > 30) {
+            setErrors({ ...errors, brand: 'O nome da marca deve ter no máximo 30 caracteres' });
+            return;
+        }
+        // Se passar pelas verificações, atualize o estado
+        setBrand(value);
+        // Limpe os erros
+        setErrors({ ...errors, brand: '' });
+    };
 
-        // Validação dos campos
-        if (brand.trim() === '') {
-            setErrorMsg('Por favor, insira a marca.');
+    const handleChangeKg = (e) => {
+        const value = e.target.value;
+        // Verificar se contém letras
+        const containsLetters = /[a-zA-Z]/.test(value);
+        if (containsLetters) {
+            setErrors({ ...errors, kg: 'Não é permitido usar letras' });
             return;
         }
-        if (!/^\d*\.?\d*$/.test(kg)) {
-            setErrorMsg('Apenas números são permitidos no campo de peso.');
-            return;
-        }
-        if (parseFloat(kg) < 0) {
-            setErrorMsg('Não é permitido inserir números negativos para o peso.');
-            return;
-        }
-        if (!/^\d*\.?\d*$/.test(price)) {
-            setErrorMsg('Apenas números são permitidos no campo de preço.');
-            return;
-        }
-        if (brand.length > 30) {
-            setErrorMsg('Não é permitido inserir mais que 30 caracteres na marca.');
-            return;
-        }
+        // Atualize o estado
+        setKg(value);
+        // Limpe os erros
+        setErrors({ ...errors, kg: '' });
+    };
 
-        // Se passar por todas as validações, chama a função de edição
-        try {
-            await editFood({
-                _id: setClicekdId,
-                brand,
-                kg,
-                price
-            });
-        } catch (error) {
-            console.error('Erro ao editar a comida:', error);
+    const handleChangePrice = (e) => {
+        const value = e.target.value;
+        // Verificar se contém letras
+        const containsLetters = /[a-zA-Z]/.test(value);
+        if (containsLetters) {
+            setErrors({ ...errors, price: 'Não é permitido usar letras' });
+            return;
         }
+        // Atualize o estado
+        setPrice(value);
+        // Limpe os erros
+        setErrors({ ...errors, price: '' });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        editFood();
     };
 
     return (
@@ -89,20 +79,21 @@ export default function ModalEdit({ editFood, toggleModal, setClicekdId }) {
                 <form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="brand">
                         <Form.Label>Marca</Form.Label>
-                        <Form.Control value={brand} onChange={(e) => setLocalBrand(e.target.value)} />
+                        <Form.Control value={brand} onChange={handleChangeBrand} />
+                        {errors.brand && <p className="error">{errors.brand}</p>}
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="kg">
                         <Form.Label>Peso</Form.Label>
-                        <Form.Control value={kg} onChange={(e) => setLocalKg(e.target.value)} />
+                        <Form.Control value={kg} onChange={handleChangeKg} />
+                        {errors.kg && <p className="error">{errors.kg}</p>}
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="price">
                         <Form.Label>Preço</Form.Label>
-                        <Form.Control value={price} onChange={(e) => setLocalPrice(e.target.value)} />
+                        <Form.Control value={price} onChange={handleChangePrice} />
+                        {errors.price && <p className="error">{errors.price}</p>}
                     </Form.Group>
-
-                    {errorMsg && <p className="error-message">{errorMsg}</p>}
 
                     <div className="buttonList">
                         <button type="button" onClick={toggleModal}>Cancelar</button>
