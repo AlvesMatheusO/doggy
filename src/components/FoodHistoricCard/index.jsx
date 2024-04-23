@@ -4,11 +4,14 @@ import Button from 'react-bootstrap/Button';
 import './index.css';
 
 const Historic = ({ setToggleModalDelete, setToggleModalEdit, foods, setClicekdId }) => {
+    
+    const reversedFoods = [...foods].reverse();
+
     return (
         <div className="historic-container">
             <h1 className="historic-title">Histórico de Rações</h1>
             <Container className='foodItem'>
-                {foods.map((food) => (
+                {reversedFoods.map((food) => (
                     <Card key={food._id} className="food-card">
                         <Card.Body>
                             <Card.Title className="food-brand">{food.brand}</Card.Title>
