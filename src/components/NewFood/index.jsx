@@ -75,7 +75,7 @@ const InsertFood = () => {
 
                         {errorMsg && <p style={{ color: 'red' }}>{errorMsg}</p>}
 
-                        <Button className='button' type="submit">Enviar</Button>
+                        <button className='button' type="submit">Adicionar</button>
                     </Form>
                 </div>
             </div>
