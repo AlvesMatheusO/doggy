@@ -1,6 +1,6 @@
 # Doggy - Controle de Compra de Rações
 
-![Logo do Doggy]([])
+<img src="/src/components/Header/logo.png">
 
 Bem-vindo ao Doggy - o aplicativo perfeito para ajudar você a gerenciar suas compras de ração para seu companheiro canino! Com o Doggy, você pode manter o controle do estoque de ração do seu cachorro, receber lembretes de quando está na hora de comprar mais ração e até mesmo acompanhar os gastos relacionados às necessidades do seu amigão peludo.
 
