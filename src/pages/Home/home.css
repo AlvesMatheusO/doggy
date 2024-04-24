@@ -7,10 +7,9 @@
 .section {
     width: 45%; 
     margin: 0 10px;
-    background-color: #f0f0f5; /* Cor lilás de fundo */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .new-food-section {
@@ -19,6 +18,9 @@
 
 .budget-section {
     order: 1; /* Mover para a direita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .chart-section {

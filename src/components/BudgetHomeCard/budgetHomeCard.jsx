@@ -1,6 +1,7 @@
 import './budget.css';
 import fetch from '../../axios/config.js';
 import React, { useState } from "react";
+import Form from 'react-bootstrap/Form';
 
 export default function BudgetCard() {
 
@@ -58,28 +59,31 @@ export default function BudgetCard() {
             <div className='background'>
                 <div className="title">
                     <h4>Você Gastou</h4>
-                    
-                    <select id="mes" value={monthSearch} onChange={handlemonthSearchChange}>
-                        <option value="">Selecione um mês </option>
-                        {meses.map((mes) => (
-                            <option key={mes.numero} value={mes.numero}>{mes.nome}</option>
-                        ))}
-                    </select>
                 </div>
+
+                <Form.Select aria-label="Default select example" id="mes" value={monthSearch} onChange={handlemonthSearchChange}>
+                    <option>Selecione o mês</option>
+                    {meses.map((mes) => (
+                        <option key={mes.numero} value={mes.numero}>{mes.nome}</option>
+                    ))}
+                </Form.Select>
                 <div className="spent">
-                    
-                    <select id="ano" value={yearSearch} onChange={handleYearChange}>
+
+                    <Form.Select aria-label="Default select example" id="ano" value={yearSearch} onChange={handleYearChange}>
                         <option value="">Selecione um ano </option>
                         {anos.map((ano) => (
                             <option key={ano.ano} value={ano.ano}>{ano.ano}</option>
                         ))}
+                    </Form.Select>
 
-                    </select>
                 </div>
                 <div className="spentKG">
-                
+
                     <button onClick={calculateTotalperMonth}>Calcular</button>
-                    <div>Total gasto no mês: R${totalGasto.toFixed(2)}</div>
+                    <div className='total'>Total gasto no mês:</div>
+                    <div className='totalValue'>
+                        <h2>R${totalGasto.toFixed(2)}</h2>
+                    </div>
                 </div>
 
             </div>

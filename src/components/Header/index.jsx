@@ -21,7 +21,7 @@ function Header() {
 
                 <div>
                     <ul id="navbar">
-                        <li><a onClick={navigateToHome}>Home</a></li>
+                        <li><a onClick={navigateToHome}>Inicio</a></li>
                         <li><a onClick={navigateToHistoric}>Histórico</a></li>
                     </ul>
                 </div>

@@ -22,22 +22,6 @@ function Home() {
                     <BudgetCard />
                 </div>
             </div>
-
-            <div className="dashboard">
-                <div className="section chart-section">
-                    <div className="chart">
-                        <h5>Total Gasto por mês</h5>
-                        <img src={chart1} alt="Imagem 1" />
-                    </div>
-                </div>
-
-                <div className="section chart-section">
-                    <div className="chart">
-                        <h5>Rações Compradas</h5>
-                        <img src={chart2} alt="Imagem 2" />
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }
