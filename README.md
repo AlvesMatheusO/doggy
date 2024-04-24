@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Doggy - Controle de Compra de Rações
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao Doggy - o aplicativo perfeito para ajudar você a gerenciar suas compras de ração para seu companheiro canino! Com o Doggy, você pode manter o controle do estoque de ração do seu cachorro, receber lembretes de quando está na hora de comprar mais ração e até mesmo acompanhar os gastos relacionados às necessidades do seu amigão peludo.
 
-## Available Scripts
+## Funcionalidades Principais
 
-In the project directory, you can run:
+- **Controle de Estoque**: Registre os tipos e quantidades de ração que você tem em casa.
+- **Lembretes de Compra**: Receba notificações para lembrá-lo de quando é hora de comprar mais ração.
+- **Registro de Gastos**: Acompanhe seus gastos com a compra de ração ao longo do tempo.
+- **Perfil do Cachorro**: Armazene informações sobre o seu cão, como peso, idade e preferências alimentares.
 
-### `npm start`
+## Como Usar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Faça o download do aplicativo Doggy na loja de aplicativos do seu dispositivo móvel.
+2. Crie uma conta ou faça login se já tiver uma.
+3. Adicione seu cachorro ao perfil.
+4. Registre os tipos e quantidades de ração que você possui.
+5. Configure lembretes para receber notificações sobre a compra de ração.
+6. Acompanhe seus gastos relacionados à alimentação do seu cão.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contribuindo
 
-### `npm test`
+Se você encontrar problemas, bugs ou tiver sugestões para melhorar o Doggy, fique à vontade para abrir uma issue neste repositório. Se você gostaria de contribuir com código, siga estas etapas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Faça um fork do repositório.
+2. Crie uma branch para a sua feature (`git checkout -b feature/nova-feature`).
+3. Faça commit das suas mudanças (`git commit -am 'Adicione uma nova feature'`).
+4. Faça push para a branch (`git push origin feature/nova-feature`).
+5. Abra um pull request.
 
-### `npm run build`
+## Tecnologias Utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend**: [React Native](https://reactnative.dev/)
+- **Backend**: [Node.js](https://nodejs.org/) com [Express](https://expressjs.com/)
+- **Banco de Dados**: [MongoDB](https://www.mongodb.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Licença
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Este projeto está licenciado sob a [MIT License](LICENSE).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Esperamos que você aproveite o Doggy tanto quanto nós! Se tiver alguma dúvida ou precisar de suporte, entre em contato conosco em doggyapp@example.com.
