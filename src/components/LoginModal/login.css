@@ -1,0 +1,37 @@
+.form-login{
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.auth{
+    padding: 5%;
+    width: 450px;
+    background-color: #f5f0f0;
+    border-radius: 5%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title h4{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+select{
+    padding: 5rem;
+    border: 1px solid #4a154b;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.forms {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.button {
+    background-color: #4a154b;
+}

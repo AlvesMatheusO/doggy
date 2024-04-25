@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import fetch from "../../axios/config";
-import './index.css'
+import fetch from "../../axios/config.js";
+import './index.css';
+
 const Authentication = () => {
 
     const [userName, setUserName] = useState('');
@@ -22,23 +23,23 @@ const Authentication = () => {
                             <Form.Label>Nome</Form.Label>
                             <Form.Control name="name" value={userName} /> {/* adicionar onChange  */}
                         </Form.Group>
-                    </Form>
 
-                    <Form > {/* adicionar onSubmit  */}
+
+
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>E-mail</Form.Label>
                             <Form.Control name="email" value={email} /> {/* adicionar onChange  */}
                         </Form.Group>
-                    </Form>
 
-                    <Form > {/* adicionar onSubmit  */}
+
+
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label>Senha</Form.Label>
                             <Form.Control name="password" value={password} /> {/* adicionar onChange  */}
                         </Form.Group>
-                    </Form>
 
-                    <Form > {/* adicionar onSubmit  */}
+
+
                         <Form.Group className="mb-3" controlId="confirmPassword">
                             <Form.Label>Repita sua senha</Form.Label>
                             <Form.Control name="confirmPassword" value={confirmPassword} /> {/* adicionar onChange  */}

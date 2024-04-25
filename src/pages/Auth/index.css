@@ -13,3 +13,17 @@
     align-content: center;
     flex-direction: column;
 }
+
+.Login-modal{
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

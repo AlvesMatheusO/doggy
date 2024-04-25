@@ -1,6 +1,6 @@
 import './index.css';
 import Authentication from '../../components/AuthModal/authModal';
-//import  Login from '../../components/LoginModal';
+import  Login from '../../components/LoginModal/loginModal.jsx';
 
 function Auth() {
 
@@ -11,7 +11,7 @@ function Auth() {
             </div>
 
             <div className='Login-modal'>
-                {/* <Login /> */}
+                <Login />
             </div>
 
         </div>
