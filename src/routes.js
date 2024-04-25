@@ -1,3 +1,4 @@
+import Auth from './pages/Auth';
 import Home from './pages/Home';
 import Food from './pages/FoodDetails'
 import React from 'react';
@@ -10,7 +11,11 @@ import {
 const router = createBrowserRouter([  
     {
         path: "/",
-        element: <Home />, 
+        element: <Auth />, 
+    },
+    {
+        path: "/home",
+        element:<Home />
     },
     {
         path: "/details/:id",

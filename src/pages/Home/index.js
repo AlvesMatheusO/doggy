@@ -3,8 +3,6 @@ import NewFood from "../../components/NewFood";
 import BudgetCard from "../../components/BudgetHomeCard/budgetHomeCard";
 
 import './home.css';
-import chart1 from '../../assets/graph1.png';
-import chart2 from '../../assets/graph2.png';
 
 function Home() {
     return (

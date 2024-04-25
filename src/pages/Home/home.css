@@ -1,5 +1,5 @@
 .dashboard {
-    display: flex;
+    display:flex;
     justify-content: space-around;
     margin-top: 30px;
 }
@@ -23,20 +23,6 @@
     align-items: center;
 }
 
-.chart-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centralizar horizontalmente */
-}
-
-.chart h5 {
-    margin-bottom: 10px;
-}
-
-.chart img {
-    width: 80%;
-    max-width: 100%; /* Para garantir que a imagem não ultrapasse o tamanho do contêiner */
-}
 
 @media only screen and (max-width: 768px) {
     .section {
