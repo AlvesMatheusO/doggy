@@ -21,13 +21,14 @@ const Authentication = () => {
                 password: password,
                 confirmPassword: confirmPassword
             });
-            console.log(name, email, password, confirmPassword);
-            console.log("usuário cadastrado!!!")
+            
+            alert("Parabens! Bem vindo ao Doggy!");
+            window.location.reload();
 
         } catch (error) {
             alert("Ocorreu um erro no seu cadastro. " + error);
             console.log(error);
-            //console.log(name, email, password, confirmPassword);
+            
         }
     }
 
@@ -49,21 +50,21 @@ const Authentication = () => {
 
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>E-mail</Form.Label>
-                            <Form.Control name="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                            <Form.Control name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                         </Form.Group>
 
 
 
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label>Senha</Form.Label>
-                            <Form.Control name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                            <Form.Control name="password" type='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                         </Form.Group>
 
 
 
                         <Form.Group className="mb-3" controlId="confirmPassword">
                             <Form.Label>Repita sua senha</Form.Label>
-                            <Form.Control name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                            <Form.Control name="confirmPassword" type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                         </Form.Group>
 
                         <button className='button' type="submit">Adicionar</button>
