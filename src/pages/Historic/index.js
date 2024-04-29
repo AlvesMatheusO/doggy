@@ -3,7 +3,7 @@ import FoodHistoricCard from "../../components/FoodHistoricCard";
 import ModalDelete from "../../components/ModalDelete";
 import ModalEdit from "../../components/ModalEdit/index.jsx";
 import { useEffect, useState } from "react";
-import fetch from '../../axios/config.js';
+import fetch from '../../services/config.js';
 import '../Home/index.js'
 
 

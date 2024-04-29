@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import fetch from "../../axios/config.js";
+import fetch from "../../services/config.js";
 import './index.css';
 
 const Authentication = () => {
@@ -9,6 +9,8 @@ const Authentication = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+
 
     const register = async (e) => {
         e.preventDefault();

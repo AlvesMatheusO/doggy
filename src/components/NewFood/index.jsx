@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import fetch from '../../axios/config.js';
+import fetch from '../../services/config.js';
 import './home.css';
 
 const InsertFood = () => {

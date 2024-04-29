@@ -1,5 +1,5 @@
 import './budget.css';
-import fetch from '../../axios/config.js';
+import fetch from '../../services/config.js';
 import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
 

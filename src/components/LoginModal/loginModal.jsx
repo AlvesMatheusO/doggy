@@ -1,24 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import fetch from '../../axios/config.js';
+import fetch from '../../services/config.js';
 import './login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const enterAccount = async (e) => {
         e.preventDefault();
 
         try {
 
-            
-            await fetch.post("/auth/user", {
+           const response =  await fetch.post("/auth/user", {
                 email: email,
                 password: password
             });
-            console.log(email, password);
-            console.log("logado");
+
+            const token = response.data.token;
+            console.log(token)
+            localStorage.setItem('token', token);
+            navigate('/home');
+
         } catch (error) {
             alert('Ocorreu um erro ao seu login, tente novamente ' + error)
             console.log(error);
