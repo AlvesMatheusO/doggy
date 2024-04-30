@@ -1,24 +1,15 @@
 .Container {
     display: flex;
+    justify-content: center; /* Centralizar os itens na mesma linha */
     margin-top: 30px;
 }
 
-.section {
-    order: -1;
-}
-
-.Cadastro-modal {
+.Cadastro-modal, .Login-modal {
     padding: 20px;
     border-radius: 8px;
-    align-content: center;
-    flex-direction: column;
-}
-
-.Login-modal{
-    order: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Mudança para empilhar os itens verticalmente */
+    align-items: center; /* Centralizar itens horizontalmente */
 }
 
 @media only screen and (max-width: 768px) {
